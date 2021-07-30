@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #c141e8;
+    font-family: 'Play', sans-serif;
+    font-weight: 300;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  header {
+    background-color: red;
+    position: relative;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    top: 0;
+    width: 100%;
+    border-bottom: 3px solid black;
+  }
+
+  .logo {
+      width: 150px;
+      padding: 10px;
+  }
+
+  .grid {
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px ;
+    row-gap: 200px;
+    column-gap: 110px;
+    justify-content: center;
+  }
+  
+  .grid_item {
+    height: 320px;
+    width: 220px;
+    margin: 10px;
+    border-radius: 20px;
+    color: #fff;
+    border: 2px solid white;
+    background-color: #6b0e87;
+  }
+
+  .card_image {
+      height: 100px;
+  }
