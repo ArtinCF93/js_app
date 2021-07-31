@@ -28,6 +28,3 @@ pokemonRepository.getAll().forEach(function (pokemon) {
     document.write("<br>");
 }
 )
-
-console.log(pokemonRepository.getAll());
-console.log(pokemonRepository.getAll());
