@@ -50,3 +50,17 @@
   .card_image {
       height: 100px;
   }
+
+  .my_button {
+    background-color: white;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(59, 59, 59);
+    padding: 15px;
+    border: black solid 2px;
+    width: 200px;
+    transition-property: opacity;
+    display: inline-block;
+    margin-top: 100px;
+    text-decoration: none;
+  }
