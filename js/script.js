@@ -25,6 +25,10 @@ let pokemonRepository = (function () {
             itemButton.classList.add('my_button');
             itemList.appendChild(itemButton);
             ulList.appendChild(itemList);
+            itemButton.addEventListener('click', function(event){
+                let target = event.target;
+                target.classList.toggle('clickon');
+            })
         }
         return {
             add:add,

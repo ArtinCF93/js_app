@@ -64,3 +64,9 @@
     margin-top: 100px;
     text-decoration: none;
   }
+
+  .clickon {
+      border-radius: 30px;
+      opacity: 20%;
+
+  }
