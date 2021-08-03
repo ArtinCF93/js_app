@@ -29,7 +29,10 @@ let pokemonRepository = (function () {
                 let target = event.target;
                 target.classList.toggle('clickon');
             })
+            itemButton.addEventListener('click', function(log) { 
+                console.log(this);});
         }
+
         return {
             add:add,
             getAll: getAll,
