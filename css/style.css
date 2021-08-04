@@ -27,30 +27,6 @@
       padding: 10px;
   }
 
-  .grid {
-    display: grid;
-    margin-top: 30px;
-    grid-template-columns: 200px 200px 200px 200px;
-    grid-template-rows: 200px 200px 200px ;
-    row-gap: 200px;
-    column-gap: 110px;
-    justify-content: center;
-  }
-  
-  .grid_item {
-    height: 320px;
-    width: 220px;
-    margin: 10px;
-    border-radius: 20px;
-    color: #fff;
-    border: 2px solid white;
-    background-color: #6b0e87;
-  }
-
-  .card_image {
-      height: 100px;
-  }
-
   .my_button {
     background-color: white;
     font-weight: 600;

@@ -28,9 +28,8 @@ let pokemonRepository = (function () {
             itemButton.addEventListener('click', function(event){
                 let target = event.target;
                 target.classList.toggle('clickon');
+                console.log(pokemon.name)
             })
-            itemButton.addEventListener('click', function(log) { 
-                console.log(this);});
         }
 
         return {
