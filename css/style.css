@@ -38,11 +38,53 @@
     transition-property: opacity;
     display: inline-block;
     margin-top: 100px;
-    text-decoration: none;
   }
 
-  .clickon {
-      border-radius: 30px;
-      opacity: 20%;
+  .my_button:hover,
+button:focus {
+  cursor: pointer;
+  opacity: 0.5;
+  color: darkgray;
+  transition: 1s opacity;
+}
 
-  }
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; 
+  overflow: auto; 
+  display: grid;
+  text-align: center;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 15px;
+  margin-top: 90px;
+  height: 200px;
+  width: 200px;
+  max-width: 700px;
+  text-align: center;
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+}

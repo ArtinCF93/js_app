@@ -3,7 +3,6 @@ let pokemonRepository = (function () {
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150'
 
 
-    
         function add(pokemon) {
             if (pokemon.name){
                 pokemonList.push(pokemon);
@@ -16,20 +15,35 @@ let pokemonRepository = (function () {
             return pokemonList;
         }
 
+        function showModal() {
+          let modalContainer = document.querySelector('#modal-container');
+              modalContainer.classList.add('is-visible');
+        }
+
+        function hideModal() {
+          let modalContainer = document.querySelector('#modal-container');
+          modalContainer.classList.remove('is-visible');
+        }
+
         function addListItem(pokemon) {
             let ulList = document.querySelector('.pokemon_list');
             let itemList = document.createElement('li');
             let itemButton = document.createElement('button');
             itemButton.innerText = pokemon.name;
             itemButton.classList.add('my_button');
+            let closeButtonElement = document.createElement('button');
+            closeButtonElement.classList.add('modal-close');
+            closeButtonElement.innerText = 'Close';
+            modalContainer.appendChild(modal);
+            modal.appendChild(closeButtonElement);
             itemList.appendChild(itemButton);
             ulList.appendChild(itemList);
-            itemButton.addEventListener('click', function(event){
-                let target = event.target;
-                target.classList.toggle('clickon');
-                showDetails(pokemon)
+            closeButtonElement.addEventListener('click', hideModal)
+            itemButton.addEventListener('click', function(){
+              showModal();
+              showDetails(pokemon);
             });
-        }
+        };
 
         function loadList() {
             return fetch(apiUrl).then(function (response) {
@@ -63,9 +77,29 @@ let pokemonRepository = (function () {
 
           function showDetails(item) {
               loadDetails(item).then(function () {
-                  console.log(item)
+                  showDetails();
+                  showModal();
               });
           }
+
+          window.addEventListener('keydown', (e) => {
+            let modalContainer = document.querySelector('#modal-container');
+            if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+              hideModal();  
+            }
+          });
+          
+          
+            let modalContainer = document.querySelector('#modal-container');
+            modalContainer.addEventListener('click', (e) => {
+            // Since this is also triggered when clicking INSIDE the modal
+            // We only want to close if the user clicks directly on the overlay
+            let target = e.target;
+            if (target === modalContainer) {
+              hideModal();
+            }
+          });
+
 
         return {
             add:add,
@@ -74,6 +108,7 @@ let pokemonRepository = (function () {
             loadList: loadList,
             loadDetails: loadDetails,
             showDetails: showDetails,
+            showModal: showModal,
         }; 
 })();
 
