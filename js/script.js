@@ -16,8 +16,11 @@ let pokemonRepository = (function () {
         }
 
         function showModal() {
-          let modalContainer = document.querySelector('#modal-container');
-              modalContainer.classList.add('is-visible');
+               let modalContainer = document.querySelector('#modal-container');
+               modalContainer.classList.add('is-visible');
+
+               let closeButtonElement = document.querySelector('#modal-close');
+               closeButtonElement.addEventListener('click', hideModal);
         }
 
         function hideModal() {
@@ -25,22 +28,16 @@ let pokemonRepository = (function () {
           modalContainer.classList.remove('is-visible');
         }
 
+
         function addListItem(pokemon) {
             let ulList = document.querySelector('.pokemon_list');
             let itemList = document.createElement('li');
             let itemButton = document.createElement('button');
             itemButton.innerText = pokemon.name;
             itemButton.classList.add('my_button');
-            let closeButtonElement = document.createElement('button');
-            closeButtonElement.classList.add('modal-close');
-            closeButtonElement.innerText = 'Close';
-            modalContainer.appendChild(modal);
-            modal.appendChild(closeButtonElement);
             itemList.appendChild(itemButton);
             ulList.appendChild(itemList);
-            closeButtonElement.addEventListener('click', hideModal)
             itemButton.addEventListener('click', function(){
-              showModal();
               showDetails(pokemon);
             });
         };
@@ -77,8 +74,17 @@ let pokemonRepository = (function () {
 
           function showDetails(item) {
               loadDetails(item).then(function () {
-                  showDetails();
                   showModal();
+                  let pokemonName = document.querySelector('#pokemon-name');
+                  pokemonName.innerText = item.name;
+                  let pokemonImg = document.querySelector('#pokemon-img');
+                  pokemonImg.src = item.imageUrl;
+                  let pokemonHeight = document.querySelector('#pokemon-height');
+                  pokemonHeight.innerText = item.height;
+                  let pokemonTypes = item.types;
+                  document.getElementById("pokemon-types").innerHTML = pokemonTypes.map(function(item) {
+                    return item.type.name;
+                  })
               });
           }
 
