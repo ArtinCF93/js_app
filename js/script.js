@@ -59,11 +59,18 @@ let pokemonRepository = (function () {
           // pokemonTypes.innerText = "types : " + item.type.name;
           // modalBody.append(pokemonTypes);
 
+          let pokemonTypes = document.createElement("p");
+          pokemonTypes.innerText = item.types.map(function(pokemonType) {
+            return pokemonType.type.name;
+                });
+          modalBody.append(pokemonTypes);
+
           // let pokemonTypes = document.createElement("p");
-          // document.getElementById("pokemon-types").innerHTML = pokemonTypes.map(function(item) {
-          //       return item.type.name;
-          //   });
-          
+          // pokemonTypes.innerText= item.types.map(function(pokemonType) {
+          //   return pokemonType.type.name;
+          // });
+          // modalBody.append(pokemonTypes);
+
         };
 
       //function hideModal() {
@@ -132,9 +139,9 @@ let pokemonRepository = (function () {
                 //let pokemonHeight = document.querySelector('#pokemon-height');
                 //pokemonHeight.innerText = item.height;
                 //let pokemonTypes = item.types;
-                document.getElementById("pokemon-types").innerHTML = pokemonTypes.map(function(item) {
-                  return item.type.name;
-                })
+                // document.getElementById("pokemon-types").innerHTML = pokemonTypes.map(function(item) {
+                //   return item.type.name;
+                // })
 
             });
         }
