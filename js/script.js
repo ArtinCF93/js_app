@@ -51,8 +51,7 @@ let pokemonRepository = (function () {
           pokemonImg.src = item.imageUrl;
           modalBody.append(pokemonImg);
 
-          let pokemonHeight = document.createElement('p');
-          pokemonHeight.innerText = item.height;
+          let pokemonHeight = $("<p>" + "Height: " + item.height + "</p>");
           modalBody.append(pokemonHeight);
 
           // let pokemonTypes = document.createElement("p");
