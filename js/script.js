@@ -79,7 +79,6 @@ let pokemonRepository = (function () {
 
 
 
-
       function addListItem(pokemon) {
           let ulList = document.querySelector('#pokemon_list');
           let itemList = document.createElement('li');
@@ -122,7 +121,6 @@ let pokemonRepository = (function () {
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
             item.types = details.types;
-            item.stats = details.stats;
           }).catch(function (e) {
             console.error(e);
           });
