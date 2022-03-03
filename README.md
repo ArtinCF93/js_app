@@ -1,6 +1,4 @@
 <h1>Achievement 1 Project: JavaScript App (Pokédex)</h1>
-![pokedeximg1](C:\Users\toojo\Documents\js_app\pokedex1.png)
-![pokedeximg2](C:\Users\toojo\Documents\js_app\pokedex2.png)
 <br>
 <h1>Objective</h1>
 <p>To build a small web application with HTML, CSS, and JavaScript that loads data from an external API and enables the viewing of data points in detail.</p>
