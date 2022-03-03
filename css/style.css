@@ -11,7 +11,7 @@ body {
   text-align: center;
 }
 
-/* nav {
+nav {
   background-color: red;
   position: relative;
   align-items: center;
@@ -20,10 +20,15 @@ body {
   top: 0;
   width: 100%;
   border-bottom: 3px solid black;
-} */
+}
 
 .logo {
-    width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 20%;
 }
 
 /* .my_button {
